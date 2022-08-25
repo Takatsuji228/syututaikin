@@ -1,0 +1,1 @@
+for a in `seq 168 171`; do ping -c 1 -w 1 192.168.111.$a; done

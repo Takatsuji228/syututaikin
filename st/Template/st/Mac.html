@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <title>MACアドレス一覧</title>
+</head>
+ 
+<body>
+    <h1>MACアドレス</h1>
+    <p>{{ message }}</p>
+    <table border="1">
+        <tr>
+            <th>MACアドレス一覧</th>
+            <th>英数字変換</th>
+        </tr>
+        {% for MAC in qs3 %}
+        <tr>
+            <td>{{MAC.mac}}</td>
+            <td>{{MAC.mac2}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+ 
+</html>

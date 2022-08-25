@@ -1,0 +1,2 @@
+arp -d *
+arp -a

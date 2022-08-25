@@ -1,0 +1,11 @@
+{% block title %}日報アプリ一覧{% endblock %}
+
+{% block content %}
+<div>
+    <ul>
+      {% for obj in object_list %}
+        <li>{{ obj.pass}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

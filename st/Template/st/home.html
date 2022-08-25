@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href='{% static "App_Folder_css/css/style.css" %}'/>
+
+</head>
+<body>
+    <h1><font color="red">{{ UserID }}</font>さんようこそ！！</h1>
+    <h1>出席してる?</h1>
+    <p>{{ message }}</p>
+    <table border="1">
+        <tr>
+            <th>姓</th>
+            <th>名</th>
+            <th>在室中</th>
+            <th>出席した?</th>
+            <th>出席日数</th>
+        </tr>
+        {% for member in qs %}
+        <tr>
+            <td>{{ member.last_name}}</td>
+            <td>{{ member.first_name}}</td>
+            <td>{{ member.zaisitu_state}}</td>
+            <td>{{ member.syusseki_state}}</td>
+            <td>{{ member.syusseki_Nissu}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+ <p> 
+ <a href="{% url 'update' %}">ユーザー情報変更はこちら</a>
+ <p> 
+ <a href="{% url 'Logout' %}">ログアウトはこちら</a>
+ </p>
+</body>
+</html>
